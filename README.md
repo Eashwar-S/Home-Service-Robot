@@ -1,2 +1,6 @@
 # Home-Service-Robot
-Robot designed to pick up objects from one place and deliver it to another.
+Robot designed to pick up objects from one place and deliver it to another using advanced monte-carlo localization.
+
+In this project, I created an object called marker using c++ code which is add_markers.cpp stored in add_markers folder which is used to first indicate the pickup location for the robot. The robot as soon as the marker appears in the environment, using pick_objects.cpp code in c++ in pick_objects folder, the robot first reaches the location the marker is pointing. As soon as the robot reaches the marker position, the marker disappears. This indicates that the robot has picked the object. Then, the picked up object's destination is already fed in into the robot in pick_object.cpp. The robot then reaches the destination for the object to be dropped off. Now, the marker reappears indicating that the object is dropped off. While this is happening, the robot simultaneously maps and localizes itself.
+
+As I am using a simulator not the actual hardware, I am assuming the marker to be the object. The individual modules of the project such as launching the gazebo, lauching the rviz, launching add_markers, launching pick_objects is done through a single shell script file home_service.sh as more number of terminals is required for individual launching of files.
